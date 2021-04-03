@@ -1,0 +1,167 @@
+// Mixins and variables
+
+
+@mixin bordersoft {
+    -moz-border-radius:7px;
+    -webkit-border-radius:7px; 
+    border-radius:7px;
+}
+
+@mixin fontstyle {
+    color:rgb(253, 253, 253);
+    font-weight: 350;
+    text-shadow: 0 0 1px rgb(253, 253, 253);
+    font-family: FreeMono, monospace;
+}
+
+@mixin polygon{
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 100%,
+        0 calc(100% - 2vw)
+    );
+
+}
+
+
+
+
+
+$purple: rgb(66, 39, 84);
+
+
+
+
+
+
+//                   Header
+
+#principal{
+    position: relative;
+    height: 300px;
+    background-color: $purple;
+    @include polygon;
+    text-align: center;
+    
+}
+
+.principal_content{
+    padding: 70px;
+    @include fontstyle;
+}
+
+
+
+
+
+
+//                  Header Menu
+
+.headermenu{
+    
+    width: 74%;
+    height: auto;
+    margin: auto;
+    margin-top: 5%;
+    background-color: rgb(245, 187, 28);
+    @include bordersoft;
+    padding: 2%;
+    box-sizing: border-box;
+}
+
+.menucontent{
+    display:inline-block;
+}
+
+.menucontent1{
+    float: right;
+    margin-right: 5em;
+    
+}
+
+.menuform{
+    @include bordersoft;
+    width: 280px;
+    height: 30px;
+}
+
+.menubutton{
+    @include bordersoft;
+    background-color:$purple;
+    color: aliceblue;
+    width: 80px;
+    height: 35px;
+    //position: absolute;
+    
+}
+
+
+
+//                            Section
+
+
+
+section{
+    text-align: center;
+}
+
+#content{
+    display: inline-block;
+    border: solid 2px $purple;
+    @include bordersoft;
+    overflow: hidden;
+    padding: 10px;
+    margin: 3% 1%;
+    width: 280px;
+    height: 450px;
+    text-align: center;
+    
+}
+
+
+.content_img {
+    width: 280px;
+    height: 180px;
+}
+
+
+
+
+
+
+//                           Footer
+
+
+.footer_align{
+    align-self: left;
+    display: flex;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 15%;
+    overflow: hidden;
+    text-align: left;
+    width: 70%;
+    border: solid 2px red;
+    color: rgb(66, 54, 64);
+}
+
+.img_footer{
+    height: 150px;
+}
+.footer_content{
+    margin-left: 100px;
+    justify-content: left;
+}
+
+
+.bottom_footer{
+    background-color: $purple;
+    @include fontstyle;
+    height: 110px;
+    text-align: center;   
+}
+
+.bottom_footercontent{
+    padding-top: 10px;
+}
