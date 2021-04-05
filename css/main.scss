@@ -24,13 +24,10 @@
 
 }
 
-
-
-
+//  Variables
 
 $purple: rgb(66, 39, 84);
-
-
+$small: 1160px;
 
 
 
@@ -58,8 +55,10 @@ $purple: rgb(66, 39, 84);
 
 //                  Header Menu
 
+
+  
 .headermenu{
-    
+ 
     width: 74%;
     height: auto;
     margin: auto;
@@ -68,22 +67,32 @@ $purple: rgb(66, 39, 84);
     @include bordersoft;
     padding: 2%;
     box-sizing: border-box;
+
 }
 
 .menucontent{
     display:inline-block;
+   
 }
 
 .menucontent1{
+    @include fontstyle;
     float: right;
     margin-right: 5em;
-    
+    @media screen and (max-width: $small) {
+        float:none ;
+   }
 }
 
 .menuform{
     @include bordersoft;
-    width: 280px;
+    width: 230px;
     height: 30px;
+}
+.menuselect{
+    @include bordersoft;
+    width:200px;
+    height: 27px;
 }
 
 .menubutton{
@@ -91,10 +100,16 @@ $purple: rgb(66, 39, 84);
     background-color:$purple;
     color: aliceblue;
     width: 80px;
-    height: 35px;
-    //position: absolute;
-    
+    height: 40px;
+    position: relative;
+    right:20px;
+    @media screen and(max-width: 565px){
+        position: relative;
+        left:5px;
+    }
 }
+
+
 
 
 
@@ -103,20 +118,57 @@ $purple: rgb(66, 39, 84);
 
 
 section{
+     
+    margin: auto;
+    width: 74%;
+    //width: auto;     
     text-align: center;
-}
+    font-family: FreeMono, monospace;
+    font-weight: 100;
+    display: flex;   
+    grid-template-columns: auto;
+    //grid-column-gap: 20px;  d
+    //vertical-align: baseline;  d
+    justify-content: center !important;
+    @media screen and(max-width: 1650px){  
+        display: initial
+
+    }     
+} 
+
+
 
 #content{
-    display: inline-block;
+    display: grid;
     border: solid 2px $purple;
     @include bordersoft;
     overflow: hidden;
-    padding: 10px;
-    margin: 3% 1%;
-    width: 280px;
+    padding: 1%;
+    margin: 8% 1% 0% 1%;
+    //grid-column-gap: 10%;
+    width: 80%;
     height: 450px;
-    text-align: center;
-    
+    justify-content: center;
+
+    display: grid;
+    @media screen and(max-width: 1650px){  
+        display: inline-block;
+        border: solid 2px $purple;
+        @include bordersoft;
+        overflow: hidden;
+        padding: 1%;
+        margin: 5%;
+        width: 280px;
+        height: 450px;
+        text-align: center;
+    } 
+}
+
+.contentbottom{
+
+    margin: 0;
+    padding: 0;
+    display: grid;
 }
 
 
@@ -125,7 +177,37 @@ section{
     height: 180px;
 }
 
+.section_button{
+    @include bordersoft;
+    margin: auto;
+    background-color: transparent;
+    border: 2px solid $purple;
+    width: 90%;
+    height: 40px;
+    font-family: FreeMono, monospace;
+    font-weight: 350;
+    text-shadow: 0 0 1px $purple;
+    font-size: 18px;
+    &:hover{
+        background-color:$purple;
+        color:white;
+    }
+}
 
+.contentwarn{
+    background-color: $purple;
+    position: relative;
+    top: -42%;
+    @include fontstyle;
+    padding: 8px;
+    @include bordersoft;
+    width: 40%;
+
+}
+
+.contentxt{
+    padding: 5%;
+}
 
 
 
@@ -142,12 +224,26 @@ section{
     overflow: hidden;
     text-align: left;
     width: 70%;
-    border: solid 2px red;
     color: rgb(66, 54, 64);
+    @media screen and(max-width: 900px) {
+        height: auto;
+        width: auto;
+        box-sizing: border-box;
+        display:block;
+        align-content: center;
+        justify-content: center;
+        padding:0;
+        margin:auto;
+        padding-right: 15px;
+        
+    }
 }
 
 .img_footer{
     height: 150px;
+    @media screen and(max-width: 900px) {
+        margin-left: 30%;
+    }
 }
 .footer_content{
     margin-left: 100px;
