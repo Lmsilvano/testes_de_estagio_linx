@@ -35,19 +35,14 @@ $small: 1160px;
 //                   Header
 
 #principal{
-    position: relative;
-    height: 300px;
-    background-color: $purple;
-    @include polygon;
-    text-align: center;
-    
+        @include polygon;
+        @include fontstyle;
+        background-color: $purple;
+        text-align: center;
+        height: 15em;
+        width: 100%;
+        padding-top: 7%;
 }
-
-.principal_content{
-    padding: 70px;
-    @include fontstyle;
-}
-
 
 
 
@@ -118,63 +113,62 @@ $small: 1160px;
 
 
 section{
-     
-    margin: auto;
-    width: 74%;
-    //width: auto;     
+    margin: 5% auto; 
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
     text-align: center;
-    font-family: FreeMono, monospace;
-    font-weight: 100;
-    display: flex;   
-    grid-template-columns: auto;
-    //grid-column-gap: 20px;  d
-    //vertical-align: baseline;  d
-    justify-content: center !important;
-    @media screen and(max-width: 1650px){  
-        display: initial
-
-    }     
-} 
+}
 
 
 
 #content{
-    display: grid;
-    border: solid 2px $purple;
+    margin: 10px;
+    padding: 10px;
     @include bordersoft;
-    overflow: hidden;
-    padding: 1%;
-    margin: 8% 1% 0% 1%;
-    //grid-column-gap: 10%;
-    width: 80%;
-    height: 450px;
-    justify-content: center;
-
-    display: grid;
-    @media screen and(max-width: 1650px){  
-        display: inline-block;
-        border: solid 2px $purple;
-        @include bordersoft;
-        overflow: hidden;
-        padding: 1%;
-        margin: 5%;
-        width: 280px;
-        height: 450px;
-        text-align: center;
-    } 
+    flex: 1 1 200px; 
+    display:inline-flex;
+    flex-direction: column; 
+    max-width: 300px;
+    border: 2px solid $purple;
+    font-weight: 350;
+    text-shadow: 0 0 1px rgb(253, 253, 253);
+    font-family: FreeMono, monospace;
+    color: $purple;
 }
 
-.contentbottom{
-
-    margin: 0;
-    padding: 0;
-    display: grid;
+#content > img{
+    @include bordersoft;
 }
 
+.center{
 
-.content_img {
-    width: 280px;
-    height: 180px;
+    flex:1;
+}
+
+.bottom{
+  
+    flex: -1; 
+    
+}
+
+.contentwarn{
+    background-color:$purple;
+    display: block;
+    box-sizing: border-box;
+    float: left;
+    position:absolute;
+    @include bordersoft;
+    @include fontstyle;
+    width: 120px;
+    //height: auto;
+    padding: auto;
+    transform: translatex(-1em) translatey(-1em);
+    //transform: translatey(-14em) translatex(-1em);
+}
+.clear{
+    clear: left;
 }
 
 .section_button{
@@ -194,20 +188,7 @@ section{
     }
 }
 
-.contentwarn{
-    background-color: $purple;
-    position: relative;
-    top: -42%;
-    @include fontstyle;
-    padding: 8px;
-    @include bordersoft;
-    width: 40%;
 
-}
-
-.contentxt{
-    padding: 5%;
-}
 
 
 
